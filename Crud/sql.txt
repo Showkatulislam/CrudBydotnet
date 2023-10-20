@@ -1,0 +1,16 @@
+use my;
+
+CREATE TABLE Department (
+    department_id int IDENTITY(1,1) PRIMARY KEY,
+    department_name varchar(255),
+);
+
+CREATE TABLE Employee (
+    employee_id int IDENTITY(1,1) PRIMARY KEY,
+    employee_name varchar(255),
+    department_id int,
+	position varchar(20),
+    salary int,
+    start_data dateTime,
+	FOREIGN KEY (department_id) REFERENCES Department(department_id)
+);
